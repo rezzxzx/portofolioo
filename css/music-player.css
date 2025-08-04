@@ -1,0 +1,93 @@
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-toggle {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+.music-toggle i {
+    color: var(--background-color);
+    font-size: 1.2rem;
+}
+
+.player-panel {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 300px;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.player-panel.active {
+    transform: scale(1);
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#cover-art {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.song-details {
+    flex: 1;
+}
+
+#song-title {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.controls button:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+    .player-panel {
+        width: 250px;
+    }
+}
